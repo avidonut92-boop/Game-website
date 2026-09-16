@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07090f">
+  <meta name="description" content="SC2 — a futuristic gaming community for players, tournaments, stats and leaderboards.">
+  <title>SC2 | Gaming Community</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="cursorGlow"></div>
+  <div class="scanlines"></div>
+  <div id="toast"></div>
+
+  <div class="name-screen" id="nameScreen">
+    <div class="name-card">
+      <div class="mini-logo">SC<span>2</span></div>
+      <div class="eyebrow">PLAYER INITIALIZATION</div>
+      <h1>ENTER THE<br><span>GAME.</span></h1>
+      <p>Choose your gamer name to initialize your SC2 profile.</p>
+      <form id="nameForm">
+        <input id="gamerName" maxlength="18" autocomplete="off" placeholder="ENTER GAMER NAME" required>
+        <button class="neon-btn" type="submit">INITIALIZE <span>→</span></button>
+      </form>
+      <div class="boot-line"><i></i> SYSTEM ONLINE <b>SC2 // 01</b></div>
+    </div>
+  </div>
+
+  <div id="particles" aria-hidden="true"></div>
+<div class="corner-hud">SC2 // <b>LIVE</b> // 2026</div>
+<div class="hud-cross"></div>
+
+<header class="topbar">
+    <a class="brand" href="#home" aria-label="SC2 Home">
+      <span class="brand-mark">SC</span><span>2</span>
+    </a>
+    <nav id="nav">
+      <a class="active" href="#home">HOME</a>
+      <a href="#games">GAMES</a>
+      <a href="#tournaments">TOURNAMENTS</a>
+      <a href="#leaderboard">LEADERBOARD</a>
+      <a href="#community">COMMUNITY</a>
+      <a href="#about">ABOUT</a>
+    </nav>
+    <div class="top-actions">
+      <button class="icon-btn" id="searchBtn" aria-label="Search">⌕</button>
+      <button class="icon-btn" id="soundBtn" aria-label="Sound">♫</button>
+      <button class="profile-chip" id="profileBtn">
+        <span class="avatar" id="avatar">P</span>
+        <span><strong id="navName">PLAYER</strong><small>LV. <b id="navLevel">1</b></small></span>
+        <span class="chevron">⌄</span>
+      </button>
+    </div>
+    <button class="mobile-menu" id="mobileMenu">☰</button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-grid"></div>
+      <div class="hero-content">
+        <div class="hero-kicker"><span></span> SC2 GAMING NETWORK</div>
+        <h1><small>PLAY / COMPETE / CONNECT</small>SC<span>2</span></h1>
+        <p>More than a game. Build your profile, track your stats, enter tournaments and connect with players.</p>
+        <div class="hero-actions">
+          <button class="neon-btn" id="joinBtn">JOIN SC2 <span>→</span></button>
+          <button class="ghost-btn" id="exploreBtn">EXPLORE GAMES</button>
+        </div>
+        <div class="hero-stats">
+          <div><strong>12K+</strong><span>ACTIVE PLAYERS</span></div>
+          <div><strong>1.2K+</strong><span>TOURNAMENTS</span></div>
+          <div><strong>4K+</strong><span>COMMUNITY MEMBERS</span></div>
+        </div>
+      </div>
+      <div class="hero-side-note">DEFY<br>THE<br><b>LIMITS</b></div>
+      <div class="hero-bottom">SC2 // 2026 <span>SCROLL TO ENTER</span> <b>↓</b></div>
+    </section>
+
+    <section class="section" id="games">
+      <div class="section-head">
+        <div><span class="section-tag">01 // DISCOVER</span><h2>POPULAR <span>GAMES</span></h2></div>
+        <button class="text-btn" id="viewGames">VIEW ALL →</button>
+      </div>
+      <div class="game-grid" id="gameGrid"></div>
+    </section>
+
+    <section class="section split" id="tournaments">
+      <div>
+        <div class="section-head compact">
+          <div><span class="section-tag">02 // COMPETE</span><h2>UPCOMING <span>TOURNAMENTS</span></h2></div>
+        </div>
+        <div class="tournament-feature">
+          <div class="tourney-art"><span>V</span></div>
+          <div class="tourney-copy">
+            <span class="live">● OPEN FOR REGISTRATION</span>
+            <h3>VALORANT<br>SHOWDOWN</h3>
+            <p>5v5 • Single Elimination</p>
+            <div class="tourney-meta"><span>18 SEP 2026</span><span>07:00 PM</span><span>₹50,000</span></div>
+            <button class="neon-btn register-btn">REGISTER NOW →</button>
+          </div>
+        </div>
+        <div class="tourney-list" id="tourneyList"></div>
+      </div>
+
+      <aside class="panel leaderboard-preview">
+        <div class="panel-head"><h3>LEADERBOARD</h3><button class="text-btn" data-scroll="#leaderboard">VIEW ALL →</button></div>
+        <div class="tabs"><button class="active">GLOBAL</button><button>WEEKLY</button><button>FRIENDS</button></div>
+        <div id="previewBoard"></div>
+      </aside>
+    </section>
+
+    <section class="section news-section">
+      <div class="section-head">
+        <div><span class="section-tag">03 // INTEL</span><h2>LATEST <span>NEWS</span></h2></div>
+        <button class="text-btn" id="refreshNews">REFRESH →</button>
+      </div>
+      <div class="news-grid" id="newsGrid"></div>
+    </section>
+
+    <section class="section profile-section" id="community">
+      <div class="profile-card">
+        <div class="profile-top">
+          <div class="big-avatar" id="bigAvatar">P</div>
+          <div>
+            <span class="section-tag">PLAYER PROFILE</span>
+            <h2 id="profileName">PLAYER</h2>
+            <p>SC2 INITIATE • MEMBER SINCE 2026</p>
+          </div>
+          <button class="ghost-btn" id="editProfile">EDIT PROFILE</button>
+        </div>
+        <div class="xp-wrap">
+          <div class="xp-line"><span>LEVEL <b id="profileLevel">1</b></span><span><b id="xpValue">250</b> / 1000 XP</span></div>
+          <div class="xp-bar"><i id="xpBar"></i></div>
+        </div>
+        <div class="stat-grid">
+          <div><span>RANK</span><strong id="rankValue">BRONZE III</strong></div>
+          <div><span>WIN RATE</span><strong id="winValue">54%</strong></div>
+          <div><span>MATCHES</span><strong id="matchValue">24</strong></div>
+          <div><span>ACHIEVEMENTS</span><strong id="achievementValue">6</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section leaderboard-section" id="leaderboard">
+      <div class="section-head">
+        <div><span class="section-tag">04 // RANK UP</span><h2>GLOBAL <span>LEADERBOARD</span></h2></div>
+        <button class="neon-btn" id="addScore">ADD MY SCORE</button>
+      </div>
+      <div class="panel board-panel">
+        <div class="board-header"><span>#</span><span>PLAYER</span><span>LEVEL</span><span>WINS</span><span>XP</span></div>
+        <div id="fullBoard"></div>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="about-copy">
+        <span class="section-tag">05 // THE NETWORK</span>
+        <h2>WELCOME TO<br><span>SC2.</span></h2>
+        <p>SC2 is a fictional next-generation gaming hub built around one idea: give every player a place to play, compete, track progress and find their squad.</p>
+        <p>Everything you do on this demo builds your local player profile. Your XP, stats and leaderboard score are saved directly in your browser.</p>
+        <button class="neon-btn" id="resetBtn">RESET PLAYER DATA →</button>
+      </div>
+      <div class="about-art">
+        <div class="orb"></div>
+        <div class="vertical-word">PLAY • COMPETE • CONNECT</div>
+        <div class="about-mark">SC<span>2</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand">SC<span>2</span></div>
+    <div>© 2026 SC2 GAMING NETWORK</div>
+    <div class="footer-links"><a href="#home">HOME</a><a href="#games">GAMES</a><a href="#community">PROFILE</a></div>
+    <button id="musicToggle" class="music-control">♫ <span>MUSIC OFF</span></button>
+  </footer>
+
+  <div class="modal" id="gameModal">
+    <div class="modal-card">
+      <button class="modal-close">×</button>
+      <div class="modal-banner" id="modalBanner"></div>
+      <span class="section-tag">FEATURED GAME</span>
+      <h2 id="modalTitle">VALORANT</h2>
+      <p id="modalText"></p>
+      <div class="modal-stats" id="modalStats"></div>
+      <div class="modal-actions">
+        <button class="neon-btn" id="modalPlay">PLAY NOW →</button>
+        <button class="ghost-btn modal-close-btn">CLOSE</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="scoreModal">
+    <div class="modal-card small">
+      <button class="modal-close">×</button>
+      <span class="section-tag">LEADERBOARD</span>
+      <h2>UPDATE SCORE</h2>
+      <p>Add XP to your local SC2 profile and update your leaderboard position.</p>
+      <input type="number" id="scoreInput" min="100" max="99999" placeholder="ENTER XP">
+      <button class="neon-btn" id="saveScore">SAVE SCORE →</button>
+    </div>
+  </div>
+
+  <div class="search-panel" id="searchPanel">
+    <input id="searchInput" placeholder="SEARCH SC2..." autocomplete="off">
+    <div id="searchResults"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
